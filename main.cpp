@@ -1,22 +1,27 @@
-#include <GLFW/glfw3.h>
-#include <iostream>
+// #include <GLFW/glfw3.h>
+// #include <GL/freeglut.h>
+// #include <iostream>
+// #include <fmt/format.h>
+// static void RenderSceneCB()
+// {
+//     glClear(GL_COLOR_BUFFER_BIT);
+//     glutSwapBuffers();
+// }
+//
+// int main(int argc, char** argv)
+// {
+//     fmt::print("Hello, World!\n");
+//     glutInit(&argc, argv);
+//     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+//     glutInitWindowSize(800, 600);
+//     glutInitWindowPosition(100, 100);
+//     glutCreateWindow("OpenGL Window with GLFW and FreeGLUT");
+//     glutDisplayFunc(RenderSceneCB);
+//
+//     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+//     glutMainLoop();
+//     return 0;
+// }
 
-int main() {
-    if (!glfwInit()) {
-        std::cerr << "GLFW init failed!" << std::endl;
-        return -1;
-    }
+#include <GL/glew.h>
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Hello GLFW", nullptr, nullptr);
-    if (!window) {
-        glfwTerminate();
-        return -1;
-    }
-
-    glfwMakeContextCurrent(window);
-    while (!glfwWindowShouldClose(window)) {
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    glfwTerminate();
-}
